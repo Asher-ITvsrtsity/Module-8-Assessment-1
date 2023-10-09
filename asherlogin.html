@@ -1,0 +1,44 @@
+
+<!-- This is a login form I made before watching the tutorial, 
+    I wanted to attempt to make my own solution before following
+    along with the tutorial.
+    (index.html is the tutorial one.)
+
+    (also i did a bit of styling for both)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="sign-in">
+                <form onsubmit="setTextState(); return false;">
+                    <label for="username">username:</label><br>
+                    <input type="text" id="username" name="username"><br>
+                    <label for="password">password:</label><br>
+                    <input type="password" id="password" name="password">
+                    <input type="submit" value="Submit">
+                </form>
+                <h1 id="text"></h1>
+            </div>
+        </div>
+
+        <script>
+            function setTextState() {
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+
+                if (username === "admin" && password === "admin") {
+                    document.getElementById("text").innerHTML = "success";
+                } else {
+                    document.getElementById("text").innerHTML = "fail, try again";
+                }
+            }
+        </script>
+    </body>
+</html>
+
